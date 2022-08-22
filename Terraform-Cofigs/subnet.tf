@@ -64,6 +64,6 @@ resource "aws_subnet" "database-subnet-2" {
   availability_zone = "us-east-1a"
 
   tags = {
-    Name = "Database Subnet 1"
+    Name = "Database Subnet 2"
   }
 }
