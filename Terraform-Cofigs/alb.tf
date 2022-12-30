@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "target-elb" {
 
 resource "aws_lb_target_group_attachment" "attachment" {
   target_group_arn = aws_lb_target_group.external-alb.arn
-  target_id        = aws_instance.demoinstance.id
+  target_id        = aws_instance.demoinstance[index].id
   port             = 80
 
   depends_on = [
@@ -26,7 +26,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
 
 resource "aws_lb_target_group_attachment" "attachment1" {
   target_group_arn = aws_lb_target_group.external-alb.arn
-  target_id        = aws_instance.demoinstance1.id
+  target_id        = aws_instance.demoinstance1[index].id
   port             = 80
 
   depends_on = [
